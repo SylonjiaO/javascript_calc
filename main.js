@@ -20,13 +20,13 @@ const principleInput = document.getElementById("principleInput");
 const contributionInput = document.getElementById("contributionInput");
 const presentValueResult = document.getElementById("presentValueResult");
 // calculate
-let p = Number(principleInput.value);
-let t = Number(lengthLoanInput.value);
-let r = Number(intrestRateInput.value)*0.01;
-let m = Number(contributionInput.value);
-let i = r/m;
-let n = m*t;
-let presentValue = p*((1-Math.pow(1+i,-n))/i);
+let prince = Number(principleInput.value);
+let term = Number(lengthLoanInput.value);
+let rate = Number(intrestRateInput.value)*0.01;
+let contribute = Number(contributionInput.value);
+let i = rate/contribute;
+let n = contribute*term;
+let presentValue = prince*((1-Math.pow(1+i,-n))/i);
 //create your message to display
 let message3 = ` ${ presentValue.toFixed(2) }`;
 //display your message
@@ -73,8 +73,8 @@ function loanStats (){
         let p = Number(principleInputc.value);
         let t = Number(lengthLoanInputc.value);
         let i = Number(intrestRateInputc.value);
-        let n = 365; 
-        let endingValue = p*Math.pow(1+i/n,n*t);
+        let days = 365; 
+        let endingValue = p*Math.pow(1+i/days,days*t);
         //display
         let message4 = `${endingValue}`;
         endingResult.innerText = message4;
