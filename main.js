@@ -71,11 +71,11 @@ function loanStats (){
         const intrestRateInputc = document.getElementById("intrestRateInputc");
         const lengthLoanInputc = document.getElementById("lengthLoanInputc");
         const principleInputc = document.getElementById("principleInputc");
-        const endingResult = document.getElementById("endingResultc");
+        const endingResultc = document.getElementById("endingResultc");
         //calculate
         let p = Number(principleInputc.value);
         let t = Number(lengthLoanInputc.value);
-        let i = Number(intrestRateInputc.value);
+        let i = Number(intrestRateInputc.value) * 0.01;
         let days = 365; 
         let endingValue = p*Math.pow(1+i/days,days*t);
         //display
