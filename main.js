@@ -1,15 +1,15 @@
-"use strict";
-
 window.onload = function() {
     valueStats();
     loanStats();
     rateStats();
-}
+}; 
 
-function valueStats (){
+ function valueStats (){
 // query element event handler
 const calculateValueBtn = document.getElementById("calculateValueBtn");
-calculateValueBtn.onclick = onCalculateValueBtnClicked;
+if (calculateValueBtn) {
+    calculateValueBtn.onclick = onCalculateValueBtnClicked;
+}
 }
 
 function onCalculateValueBtnClicked(){
@@ -32,11 +32,12 @@ let message3 = ` ${ presentValue.toFixed(2) }`;
 //display your message
 presentValueResult.innerText = message3;
 }
-
 function loanStats (){
     const calculateLoanBtn = document.getElementById("calculateLoanBtn");
-    calculateLoanBtn.onclick = onCalculateLoanBtnClicked;
+   if (calculateLoanBtn) { calculateLoanBtn.onclick = onCalculateLoanBtnClicked;
     }
+}
+
     function onCalculateLoanBtnClicked(){
         //query element
         const intrestRateInputb = document.getElementById("intrestRateInputb");
@@ -59,10 +60,11 @@ function loanStats (){
         paidIntResult.innerText = message2;
         }
         
-    function rateStats (){ 
+ function rateStats (){ 
         const calculateRateBtn = document.getElementById("calculateRateBtn");
-        calculateRateBtn.onclick = onCalculateRateBtnClicked
+   if (calculateRateBtn)  { calculateRateBtn.onclick = onCalculateRateBtnClicked;
     }
+ }
     function onCalculateRateBtnClicked(){
         //query element
         const intrestRateInputc = document.getElementById("intrestRateInputc");
@@ -77,5 +79,5 @@ function loanStats (){
         let endingValue = p*Math.pow(1+i/days,days*t);
         //display
         let message4 = `${endingValue}`;
-        endingResult.innerText = message4;
+        endingResultc.innerText = message4;
     }
